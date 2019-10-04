@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+const fs = require("fs-extra");
+
+const { parseAndEvaluate } = require("../src");
+
+const [command, ...args] = process.argv.slice(2);
+
+if (!command) {
+  const { main } = require("../src/repl");
+  return main();
+}
+
+const run = async source_path => {
+  try {
+    const file = await fs.readFile(source_path, "utf-8");
+    const result = parseAndEvaluate(file);
+    console.log(result);
+  } catch (e) {
+    console.error(error);
+  }
+};
+
+if (command.toLowerCase() === "run") {
+  const source_path = args[0];
+  return run(source_path);
+}
+
+return run(command.toLowerCase());

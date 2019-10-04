@@ -1,0 +1,40 @@
+{
+  "name": "alandalang",
+  "version": "0.1.0",
+  "description": "",
+  "bin": {
+    "alandalang": "bin/alandalang"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node bin/alandalang"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/generator": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/plugin-proposal-export-default-from": "^7.5.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.5.0",
+    "fs-extra": "^8.1.0"
+  },
+  "devDependencies": {
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "mock-fs": "^4.10.1"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "testRegex": "^.+\\.test.jsx?$",
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
